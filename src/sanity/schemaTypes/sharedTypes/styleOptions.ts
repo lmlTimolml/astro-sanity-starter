@@ -1,6 +1,6 @@
 // /schemas/shared/styleOptions.ts
 import { defineField } from 'sanity';
-/* import type { StyleField } from '../../../types/sanityTypes';
+import type { StyleField } from '../../../types/sanityTypes';
 import {
   moduleTypes,
   textColors,
@@ -8,7 +8,7 @@ import {
   borderColors,
   dotColors,
   dotBorders,
-} from './globalschemas'; */
+} from './globals';
 
 export function styleOptionsFields(
   enabledFields: StyleField[] = [

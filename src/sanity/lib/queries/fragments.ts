@@ -1,0 +1,131 @@
+// queries/fragments.ts
+
+export const seoSettings = `
+  "seoSettings": *[_type == "seoSettings"][0]{
+    defaultTitle,
+    defaultKeywords,
+    defaultDescription,
+    ogImage { asset->{ url } }
+  }
+`;
+
+export const pageMeta = `
+pageMeta {
+      title,
+      keuwords,
+      description,
+      ogImage { asset->{ url } },
+      canonicalUrl,
+      robots,
+      ogTitle,
+      ogDescription,
+      twitterCard
+    }
+`;
+
+export const navfragment = `
+navigation->{
+  title,
+  navColor,
+  desktopLogo {
+    asset->{url}
+  },
+  mobileLogo {
+    asset->{url}
+  },
+  menuItems[]{
+    _key,
+          title,
+          newTab,
+          section,
+          link {
+            external,
+            internal->{ _type, title, slug }
+          }
+  }
+}
+`;
+
+export const footerFragment = `
+  footer->{
+    footerColor,
+    modules[]{
+      ...,
+      content[]{
+        ...,
+        text,
+        buttons[]{
+          _key,
+          label,
+          variant,
+          newTab,
+          section,
+          link {
+            external,
+            internal->{ _type, title, slug }
+          }
+        },
+        contactInfo {
+          email,
+          phone,
+          address,
+          socials[]{
+            platform,
+            url,
+            email,
+            phone,
+            icon {
+              asset->{ _id, url }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const modulesFragment = `
+  modules[] {
+    ...,
+    _type,
+    moduletype,
+    blockID,
+    corners {
+      allCorners,
+      topLeft,
+      topRight,
+      bottomLeft,
+      bottomRight
+    },
+    bgColor,
+    textColor,
+    border,
+    padding,
+  
+    content[] {
+      ...,
+      buttons[]{
+          _key,
+          label,
+          variant,
+          newTab,
+          section,
+          link {
+            external,
+            internal->{ _type, title, slug }
+          }
+        },
+       
+      video { asset->{ url, mimeType } },
+      image {
+        asset->{
+          _id,
+          url,
+          metadata { dimensions { aspectRatio, width, height } }
+        },
+        crop,
+        hotspot
+      }
+    }
+  }
+`;

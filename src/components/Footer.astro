@@ -1,0 +1,28 @@
+---
+/* import cleanClass from '../utils/cleanClass' */
+import deepClean from '../utils/deepClean';
+import type { FooterType } from '../types/sanityTypes';
+
+import { components } from '../sanity/lib/components';
+
+const footer = deepClean(Astro.props) as FooterType;
+
+const modules = footer?.modules ?? [];
+const footerBg = footer?.footerColor;
+
+/* const customClass = [
+  `${cleanClass(footerBg)}`,
+].join(' '); */
+
+---
+
+<footer class={`grid-component-wrapper ${footerBg}`}>
+  {modules?.map((mod, index) => {
+  const Component = components[mod._type];
+  if (!Component) {
+    console.warn(`⚠️ No component found for module type: ${mod._type}`);
+    return null;
+  }
+  return <Component {...mod} key={index} />;
+})}
+</footer>

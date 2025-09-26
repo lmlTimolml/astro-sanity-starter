@@ -2,6 +2,10 @@
 import type { SchemaTypeDefinition } from 'sanity';
 import { page } from './pages/page';
 import { homepage } from './pages/homepage';
+import { pageMeta } from './sharedTypes/pageMeta';
+import { seoSettings } from './sharedTypes/seoSettings';
+import { footer } from './footer';
+import { navigation } from './nav';
 /* import { blockContentType } from './shared/blockContent';
 import { categoryType } from './ui/category';
 import { twoColTxtImg } from './blocks/twoColTxtImg';
@@ -12,8 +16,6 @@ import { services } from './blocks/services';
 import { service } from './ui/service';
 import { socialLink } from './ui/soscialLink';
 import { contactInfo } from './blocks/contactInfo';
-import { footer } from './footer';
-import { navigation } from './nav';
 import { casePage } from './pages/case';
 import { caseCard } from './blocks/caseCard';
 import { casesBlock } from './blocks/casesBlock';
@@ -25,17 +27,17 @@ import { clientsBlock } from './blocks/clientsBlock';
 import { mainModule } from './blocks/mainModule';
 import { highLight } from './ui/highlight';
 import { highLightsBlock } from './blocks/highlightsBlock';
-import { carousel } from './blocks/carousel';
-import { pageMeta } from './shared/pageMeta';
-import { seoSettings } from './shared/seoSettings'; */
+import { carousel } from './blocks/carousel'; */
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     homepage,
     page,
-    /* casePage,
     pageMeta,
     seoSettings,
+    navigation,
+    footer,
+    /* casePage,
     mainModule,
     caseCard,
     casesBlock,
@@ -57,7 +59,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     button,
     contactInfo,
     socialLink,
-    navigation,
-    footer, */
+     */
   ],
 };
