@@ -26,14 +26,12 @@ console.log('NAV: ', nav);
       src={urlForImage(nav.desktopLogo).width(160).url()}
       alt="Logo"
       class="hidden md:flex max-h-10"
-      width="200"
     />) : null }
     {nav.mobileLogo?.asset?.url ? (
     <img
       src={urlForImage(nav.mobileLogo).width(160).url()}
       alt="Logo"
       class="md:hidden max-h-14"
-      width="200"
     />) : null }
   </a>
 
