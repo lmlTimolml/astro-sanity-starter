@@ -62,7 +62,7 @@ export const navigation = defineType({
                   name: 'internal',
                   title: 'Internal Reference',
                   type: 'reference',
-                  to: [{ type: 'page' }, { type: 'case' }, { type: 'article' }], // Change 'page' to match your internal document types
+                  to: [{ type: 'page' }], // Change 'page' to match your internal document types
                 }),
               ],
             }),

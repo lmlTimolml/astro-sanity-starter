@@ -76,7 +76,7 @@ export const textColors = [
 
 export const pageSections = [
   { type: 'mainModule' },
-  { type: 'twoColTxtImg' },
+  /*   { type: 'twoColTxtImg' },
   { type: 'accordion' },
   { type: 'services' },
   { type: 'casesBlock' },
@@ -84,5 +84,5 @@ export const pageSections = [
   { type: 'employeeBlock' },
   { type: 'clientsBlock' },
   { type: 'highLightsBlock' },
-  { type: 'carousel' },
+  { type: 'carousel' }, */
 ];

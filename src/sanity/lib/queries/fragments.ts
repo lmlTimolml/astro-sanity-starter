@@ -12,7 +12,7 @@ export const seoSettings = `
 export const pageMeta = `
 pageMeta {
       title,
-      keuwords,
+      keywords,
       description,
       ogImage { asset->{ url } },
       canonicalUrl,

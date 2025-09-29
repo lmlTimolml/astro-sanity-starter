@@ -67,6 +67,12 @@ export interface BlockStylesType {
   borderDotColor?: string;
 }
 
+export type ContentField = 'title' | 'text' | 'contactInfo' | 'buttons';
+
+export interface ContentBlockOptions {
+  enabledFields?: ContentField[];
+}
+
 export interface Slug {
   current: string;
 }
