@@ -1,6 +1,6 @@
 // schemas/footer.ts
 import { defineField, defineType } from 'sanity';
-import { backGroundColors, pageSections } from './sharedTypes/globals';
+import { backGroundColors, pageBlocks } from './sharedTypes/globals';
 
 export const footer = defineType({
   name: 'footer',
@@ -22,10 +22,10 @@ export const footer = defineType({
       },
     }),
     defineField({
-      name: 'modules',
+      name: 'blocks',
       type: 'array',
-      title: 'Footer Modules',
-      of: pageSections,
+      title: 'Footer Blocks',
+      of: pageBlocks,
     }),
   ],
 });

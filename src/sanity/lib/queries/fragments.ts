@@ -27,6 +27,7 @@ export const navfragment = `
 navigation->{
   title,
   navColor,
+  linkColor,
   desktopLogo {
     asset->{url}
   },
@@ -49,7 +50,7 @@ navigation->{
 export const footerFragment = `
   footer->{
     footerColor,
-    modules[]{
+    blocks[]{
       ...,
       content[]{
         ...,
@@ -84,11 +85,11 @@ export const footerFragment = `
   }
 `;
 
-export const modulesFragment = `
-  modules[] {
+export const blocksFragment = `
+  blocks[] {
     ...,
     _type,
-    moduletype,
+    blocktype,
     blockID,
     corners {
       allCorners,

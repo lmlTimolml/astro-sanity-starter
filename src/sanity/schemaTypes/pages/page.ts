@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { backGroundColors, pageSections } from '../sharedTypes/globals';
+import { backGroundColors, pageBlocks } from '../sharedTypes/globals';
 
 export const page = defineType({
   name: 'page',
@@ -46,11 +46,11 @@ export const page = defineType({
       },
     }),
     defineField({
-      name: 'modules',
+      name: 'blocks',
       type: 'array',
-      title: 'Page Sections',
+      title: 'Page Blocks',
       group: 'pagedesign',
-      of: pageSections,
+      of: pageBlocks,
     }),
     defineField({
       name: 'footer',

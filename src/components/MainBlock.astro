@@ -8,7 +8,7 @@ import MainButton from './ui/MainButton.astro';
 import { getCornerClasses } from '../utils/getCornerClasses';
 import type { ButtonType } from '../types/sanityTypes'
 
-const { moduletype = 'col-2-center', blockID = '', allCorners = false,
+const { blocktype = 'col-2-center', blockID = '', allCorners = false,
   topLeft = false,
   topRight = false,
   bottomLeft = false,
@@ -26,9 +26,9 @@ const anchor = blockID ? blockID : block._key;
   `${cleanClass(border)}`,
 ].join(' ');
 const pad = cleanClass(padding)
-const module = cleanClass(moduletype); */
+const module = cleanClass(blocktype); */
 
-const moduleClassMap: Record<string, string> = {
+const blockClassMap: Record<string, string> = {
   'col-2-breakout': 'sm:col-span-full md:col-start-2 md:col-span-6',
   'col-2-breakout-l': 'sm:col-span-full md:col-start-2 md:col-span-6',
   'col-2-breakout-r': 'sm:col-span-full md:col-span-6',
@@ -40,7 +40,7 @@ const moduleClassMap: Record<string, string> = {
   // add more as needed
 };
 
-const wrapperClass = moduleClassMap[moduletype] ?? ''; // fallback empty if not found
+const wrapperClass = blockClassMap[blocktype] ?? ''; // fallback empty if not found
 
 const mediaClassMap: Record<string, string> = {
   'col-2-bleed' : 'md:max-h-[480px]',
@@ -48,13 +48,13 @@ const mediaClassMap: Record<string, string> = {
   'col-2-bleed-l' : 'md:max-h-[480px]',
 }
 
-const wrapMediaClass = mediaClassMap[moduletype] ?? '';
+const wrapMediaClass = mediaClassMap[blocktype] ?? '';
 
 
 
 ---
 
-<section id={anchor} class={`${module} ${padding} ${textColor} ${bgColor} ${border} ${getCornerClasses(corners)}`}>
+<section id={anchor} class={`${blocktype} ${padding} ${textColor} ${bgColor} ${border} ${getCornerClasses(corners)}`}>
   {block && block._type === 'textBlock' && (
       <div class={wrapperClass}>
     { block.title ? <h1>{block.title}</h1> : null }

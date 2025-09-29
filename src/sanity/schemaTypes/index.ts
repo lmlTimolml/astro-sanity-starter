@@ -6,7 +6,7 @@ import { pageMeta } from './sharedTypes/pageMeta';
 import { seoSettings } from './sharedTypes/seoSettings';
 import { footer } from './footer';
 import { navigation } from './nav';
-import { mainModule } from './blocks/mainModule';
+import { mainBlock } from './blocks/mainBlock';
 import { contactInfo } from './sharedTypes/contactInfo';
 import { blockContentType } from './sharedTypes/blockContent';
 import { button } from './ui/button';
@@ -37,7 +37,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     seoSettings,
     navigation,
     footer,
-    mainModule,
+    mainBlock,
     blockContentType,
     button,
     contactInfo,

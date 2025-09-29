@@ -1,13 +1,14 @@
 ---
 import { VisualEditing } from "@sanity/astro/visual-editing";
 import Head from "../sanity/lib/Head.astro";
-/* import type { LayoutProps } from '../types/sanityTypes'; */
+import '../styles/global.css'
+import type { LayoutProps } from '../types/sanityTypes';
 import '../styles/global.css'
 
 const visualEditingEnabled =
   import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED;
 
-  const {page, settings } = Astro.props /* as LayoutProps */;
+  const {page, settings } = Astro.props as LayoutProps;
 
 ---
 

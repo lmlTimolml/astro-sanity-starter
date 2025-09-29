@@ -2,15 +2,15 @@ import { contentModule } from '../sharedTypes/contentModule';
 import { contentBlock } from '../sharedTypes/contentBlock';
 import { styleOptionsFields } from '../sharedTypes/styleOptions';
 
-const blockTitle = 'Main Module';
+const blockTitle = 'Main Block';
 
-export const mainModule = contentModule({
-  name: 'mainModule',
+export const mainBlock = contentModule({
+  name: 'mainBlock',
   title: blockTitle,
   fields: [
     contentBlock(),
     ...styleOptionsFields([
-      'moduletype',
+      'blocktype',
       'blockID',
       'corners',
       'padding',

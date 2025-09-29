@@ -7,20 +7,22 @@ import { components } from '../sanity/lib/components';
 
 const footer = deepClean(Astro.props) as FooterType;
 
-const modules = footer?.modules ?? [];
+const blocks = footer?.blocks ?? [];
 const footerBg = footer?.footerColor;
 
 /* const customClass = [
   `${cleanClass(footerBg)}`,
 ].join(' '); */
 
+console.log('FOOTER: ', blocks);
+
 ---
 
 <footer class={`grid-component-wrapper ${footerBg}`}>
-  {modules?.map((mod, index) => {
+  {blocks?.map((mod, index) => {
   const Component = components[mod._type];
   if (!Component) {
-    console.warn(`⚠️ No component found for module type: ${mod._type}`);
+    console.warn(`⚠️ No footer component found for block type: ${mod._type}`);
     return null;
   }
   return <Component {...mod} key={index} />;

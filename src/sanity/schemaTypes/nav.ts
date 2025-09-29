@@ -1,6 +1,6 @@
 // schemas/documents/navigation.ts
 import { defineType, defineField } from 'sanity';
-import { backGroundColors } from './sharedTypes/globals';
+import { backGroundColors, textColors } from './sharedTypes/globals';
 
 export const navigation = defineType({
   name: 'navigation',
@@ -20,6 +20,13 @@ export const navigation = defineType({
         list: backGroundColors,
         layout: 'radio',
       },
+    }),
+    defineField({
+      name: 'linkColor',
+      title: 'Link Color',
+      type: 'string',
+      initialValue: 'text-black',
+      options: { list: textColors, layout: 'radio' },
     }),
     defineField({
       name: 'desktopLogo',

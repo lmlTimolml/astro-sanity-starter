@@ -7,14 +7,17 @@ import Navlink from './ui/Navlink.astro';
 const nav = deepClean(Astro.props) as NavType;
 
 const navBg = nav?.navColor;
+const linkCol = nav?.linkColor;
 
 /* const customClass = [
   `${cleanClass(navBg)}`,
 ].join(' '); */
 
+console.log('NAV: ', nav);
+
 ---
 { nav ? (
-<nav id="nav" class={`grid-component-wrapper transition-all duration-300 ease-in-out top-0 z-50 fixed !gap-y-0 ${navBg}`}>
+<nav id="nav" class={`grid-component-wrapper transition-all duration-300 ease-in-out top-0 z-50 fixed !gap-y-0 ${navBg} ${linkCol}`}>
     <div class="nav-wrapper w-full">
   <!-- Logo -->
   <a href="/">
@@ -36,7 +39,7 @@ const navBg = nav?.navColor;
 
   <!-- Desktop Menu -->
    { nav.menuItems ? (
-  <ul class="hidden ml-auto md:flex gap-6 items-center text-base">
+  <ul class={`hidden ml-auto md:flex gap-6 items-center text-base`}>
     {nav.menuItems?.map((btn) => (
         <Navlink btn={btn}
 />

@@ -2,7 +2,7 @@
 import { defineField } from 'sanity';
 import type { StyleField } from '../../../types/sanityTypes';
 import {
-  moduleTypes,
+  blockTypes,
   textColors,
   backGroundColors,
   borderColors,
@@ -12,7 +12,7 @@ import {
 
 export function styleOptionsFields(
   enabledFields: StyleField[] = [
-    'moduletype',
+    'blocktype',
     'blockID',
     'corners',
     'padding',
@@ -24,14 +24,14 @@ export function styleOptionsFields(
   ]
 ): ReturnType<typeof defineField>[] {
   return [
-    ...(enabledFields.includes('moduletype')
+    ...(enabledFields.includes('blocktype')
       ? [
           defineField({
-            name: 'moduletype',
-            title: 'Module Type',
+            name: 'blocktype',
+            title: 'Block Type',
             type: 'string',
             initialValue: 'col-2-center',
-            options: { list: moduleTypes, layout: 'radio' },
+            options: { list: blockTypes, layout: 'radio' },
           }),
         ]
       : []),

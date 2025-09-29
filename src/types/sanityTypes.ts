@@ -101,7 +101,7 @@ export interface MainBlock extends BaseBlock {
   _type: 'mainBlock';
 }
 
-export type PageModule = MainBlock;
+export type PageBlocks = MainBlock;
 /*   | TwoColTxtImg
   | Accordion
   | Services
@@ -172,12 +172,17 @@ export interface SeoSettingsType {
 
 /* PAGES */
 
+export interface LayoutProps {
+  page?: BasePageType;
+  settings?: SeoSettingsType;
+}
+
 export interface BasePageType {
   _id: string;
   title: string;
   slug: Slug;
   pageColor: string;
-  modules: PageModule[];
+  blocks: PageBlocks[];
   footer: FooterType;
   navigation: NavType;
   pageMeta?: MetaType;
@@ -190,7 +195,7 @@ export interface PageType extends BasePageType {
 }
 
 export type StyleField =
-  | 'moduletype'
+  | 'blocktype'
   | 'blockID'
   | 'corners'
   | 'padding'
@@ -213,6 +218,7 @@ export interface NavType {
   _type: 'navigation';
   _id: string;
   navColor?: string;
+  linkColor?: string;
   desktopLogo?: NavLogo;
   mobileLogo?: NavLogo;
   menuItems?: {
@@ -250,5 +256,5 @@ export interface FooterType {
   _id: string;
   title: string;
   footerColor?: string;
-  modules: PageModule[];
+  blocks: PageBlocks[];
 }

@@ -1,4 +1,4 @@
-export const moduleTypes = [
+export const blockTypes = [
   { title: 'One Column Left', value: 'col-1-l' },
   { title: 'One Column Left Square', value: 'col-1-sq-l' },
   { title: 'One Column Left Breakout', value: 'col-1-breakout-l' },
@@ -74,8 +74,8 @@ export const textColors = [
   { title: 'Peach', value: 'text-contrast' },
 ];
 
-export const pageSections = [
-  { type: 'mainModule' },
+export const pageBlocks = [
+  { type: 'mainBlock' },
   /*   { type: 'twoColTxtImg' },
   { type: 'accordion' },
   { type: 'services' },
