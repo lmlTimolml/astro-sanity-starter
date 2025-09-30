@@ -3,7 +3,7 @@ import type { SchemaTypeDefinition } from 'sanity';
 import { page } from './pages/page';
 import { homepage } from './pages/homepage';
 import { pageMeta } from './sharedTypes/pageMeta';
-import { seoSettings } from './sharedTypes/seoSettings';
+import { globalSeo } from './sharedTypes/globalSeo';
 import { footer } from './footer';
 import { navigation } from './nav';
 import { mainBlock } from './blocks/mainBlock';
@@ -34,7 +34,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homepage,
     page,
     pageMeta,
-    seoSettings,
+    globalSeo,
     navigation,
     footer,
     mainBlock,

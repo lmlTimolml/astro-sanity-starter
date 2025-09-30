@@ -1,11 +1,13 @@
 // schemas/footer.ts
 import { defineField, defineType } from 'sanity';
 import { backGroundColors, pageBlocks } from './sharedTypes/globals';
+import { InfoOutlineIcon } from '@sanity/icons';
 
 export const footer = defineType({
   name: 'footer',
   title: 'Footer',
   type: 'document',
+  icon: InfoOutlineIcon,
   fields: [
     defineField({
       name: 'title',

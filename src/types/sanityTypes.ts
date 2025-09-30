@@ -159,7 +159,7 @@ export interface MetaType {
   twitterCard?: 'summary' | 'summary_large_image';
 }
 
-export interface SeoSettingsType {
+export interface GlobalSeoType {
   defaultTitle?: string;
   defaultKeywords?: string;
   defaultDescription?: string;
@@ -174,7 +174,7 @@ export interface SeoSettingsType {
 
 export interface LayoutProps {
   page?: BasePageType;
-  settings?: SeoSettingsType;
+  settings?: GlobalSeoType;
 }
 
 export interface BasePageType {
@@ -186,7 +186,7 @@ export interface BasePageType {
   footer: FooterType;
   navigation: NavType;
   pageMeta?: MetaType;
-  seoSettings: SeoSettingsType;
+  globalSeo: GlobalSeoType;
 }
 
 // Alias the types so TS knows they're the same structure
