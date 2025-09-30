@@ -1,7 +1,7 @@
 // queries/fragments.ts
 
-export const seoSettings = `
-  "seoSettings": *[_type == "seoSettings"][0]{
+export const globalSeo = `
+  "globalSeo": *[_type == "globalSeo"][0]{
     defaultTitle,
     defaultKeywords,
     defaultDescription,

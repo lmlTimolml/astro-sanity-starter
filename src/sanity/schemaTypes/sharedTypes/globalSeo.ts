@@ -1,9 +1,11 @@
 import { defineType, defineField } from 'sanity';
+import { SearchIcon } from '@sanity/icons';
 
-export const seoSettings = defineType({
-  name: 'seoSettings',
+export const globalSeo = defineType({
+  name: 'globalSeo',
   title: 'Global SEO Settings (Default)',
   type: 'document',
+  icon: SearchIcon,
   fields: [
     defineField({
       name: 'defaultTitle',

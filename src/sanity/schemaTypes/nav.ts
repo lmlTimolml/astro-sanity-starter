@@ -1,11 +1,13 @@
 // schemas/documents/navigation.ts
 import { defineType, defineField } from 'sanity';
 import { backGroundColors, textColors } from './sharedTypes/globals';
+import { MenuIcon } from '@sanity/icons';
 
 export const navigation = defineType({
   name: 'navigation',
   title: 'Navigation',
   type: 'document',
+  icon: MenuIcon,
   fields: [
     defineField({
       name: 'title',

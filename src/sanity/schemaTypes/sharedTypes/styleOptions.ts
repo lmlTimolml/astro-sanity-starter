@@ -56,7 +56,10 @@ export function styleOptionsFields(
             options: {
               list: [
                 { title: 'None', value: 'p-0' },
-                { title: 'Padding', value: 'p-5' },
+                { title: 'Padding 10px', value: 'p-2.5' },
+                { title: 'Padding 20px', value: 'p-5' },
+                { title: 'Padding 30px', value: 'p-7.5' },
+                { title: 'Padding 40px', value: 'p-10' },
               ],
               layout: 'radio',
             },

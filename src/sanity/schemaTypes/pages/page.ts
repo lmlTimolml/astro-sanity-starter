@@ -1,13 +1,15 @@
 import { defineField, defineType } from 'sanity';
 import { backGroundColors, pageBlocks } from '../sharedTypes/globals';
+import { DocumentsIcon, DocumentIcon, SearchIcon } from '@sanity/icons';
 
 export const page = defineType({
   name: 'page',
   title: 'Pages',
   type: 'document',
+  icon: DocumentsIcon,
   groups: [
-    { name: 'pagedesign', title: 'Page Design' },
-    { name: 'metadata', title: 'Meta Data' },
+    { name: 'pagedesign', title: 'Page Design', icon: DocumentIcon },
+    { name: 'metadata', title: 'Meta Data', icon: SearchIcon },
   ],
   fields: [
     defineField({

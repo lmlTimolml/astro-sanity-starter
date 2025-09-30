@@ -2,7 +2,7 @@
 /* import cleanClass from '../utils/cleanClass' */
 import deepClean from '../utils/deepClean';
 import { loadQuery } from '../sanity/lib/load-query';
-import { footerFragment, blocksFragment, navfragment, pageMeta, seoSettings } from '../sanity/lib/queries/fragments';
+import { footerFragment, blocksFragment, navfragment, pageMeta, globalSeo } from '../sanity/lib/queries/fragments';
 import Layout from '../layouts/Layout.astro';
 import type { PageType } from '../types/sanityTypes';
 
@@ -15,7 +15,7 @@ const { data: homepage } = await deepClean(loadQuery<PageType>)({
     title,
     pageColor,
     ${pageMeta},
-    ${seoSettings},
+    ${globalSeo},
     ${navfragment},
     ${footerFragment},
     ${blocksFragment}
@@ -31,7 +31,7 @@ const nav = homepage?.navigation;
 export const prerender = false;
 
 const page = homepage;
-const settings = page.seoSettings;
+const settings = page.globalSeo;
 
 console.log('INDEX: ',blocks);
 
