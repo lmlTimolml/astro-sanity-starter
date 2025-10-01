@@ -1,7 +1,6 @@
 ---
 import SanityImage from './SanityImage.astro';
 import { extractYouTubeId } from '../../utils/youtube';
-import deepClean from '../../utils/deepClean';
 
 const {
   mediaType,
@@ -10,7 +9,7 @@ const {
   alt = '',
   youtubeUrl,
   mapEmbedUrl,
-} = deepClean(Astro.props);
+} = Astro.props;
 
 const url = video?.asset?.url;
 const mime = video?.asset?.mimeType;

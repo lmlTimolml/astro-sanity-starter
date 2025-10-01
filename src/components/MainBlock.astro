@@ -2,8 +2,6 @@
 import PortableText from './PortableText.astro';
 import ContactInfo from './ui/ContactInfo.astro';
 import MediaBlock from './ui/MediaBlock.astro';
-/* import cleanClass from '../utils/cleanClass'; */
-import deepClean from '../utils/deepClean';
 import MainButton from './ui/MainButton.astro';
 import { getCornerClasses } from '../utils/getCornerClasses';
 import type { ButtonType } from '../types/sanityTypes'
@@ -12,12 +10,11 @@ const { blocktype = 'col-2-center', blockID = '', allCorners = false,
   topLeft = false,
   topRight = false,
   bottomLeft = false,
-  bottomRight = false, content =[], padding = 'p-0', textColor = 'text-black', bgColor = 'bg-transparent', border = 'border-none' } = deepClean(Astro.props);
+  bottomRight = false, content =[], padding = 'p-0', textColor = 'text-black', bgColor = 'bg-transparent', border = 'border-none' } = Astro.props;
 const block = content?.[0];
 const buttons = block?.buttons ?? [];
 const corners = { allCorners, topLeft, topRight, bottomLeft, bottomRight };
 const anchor = blockID ? blockID : block._key;
-/* const anchor = cleanClass(blockID) ? cleanClass(blockID) : cleanClass(block._key); */
 
 // Merge Tailwind classes dynamically
 /* const customClass = [

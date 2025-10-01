@@ -1,9 +1,7 @@
 ---
-/* import { cleanAnchor } from '../../utils/cleanAnchor'; */
-import deepClean from '../../utils/deepClean';
 import Button from './Button.astro';
 
-const { btn } = deepClean(Astro.props);
+const { btn } = Astro.props;
 
 let href = '#';
 

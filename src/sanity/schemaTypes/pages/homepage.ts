@@ -58,4 +58,10 @@ export const homepage = defineType({
       validation: Rule => Rule.required(),
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image',
+    },
+  },
 });

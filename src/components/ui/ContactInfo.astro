@@ -2,12 +2,8 @@
 // src/components/ContactInfo.astro
 import type { ContactInfoProps, SocialLink } from '../../types/sanityTypes';
 import { urlForImage } from '../../sanity/lib/url-for-image';
-import deepClean from '../../utils/deepClean';
-/* import cleanPlatform from '../../utils/cleanPlatform';
-import { cleanAnchor } from '../../utils/cleanAnchor'; */
 
-
-const { email, phone, address, socials = [] } = deepClean(Astro.props) as ContactInfoProps;
+const { email, phone, address, socials = [] } = Astro.props as ContactInfoProps;
 
 function getSocialHref(social: SocialLink) {
   if (social.platform === 'phone') {
@@ -18,15 +14,6 @@ function getSocialHref(social: SocialLink) {
   }
   return social.url ?? "#";
 }
-/* function getSocialHref(social: SocialLink) {
-  if (cleanPlatform(social.platform) === 'phone') {
-    return `tel:00${social.phone}`;
-  }
-  if (cleanPlatform(social.platform) === 'email') {
-    return `mailto:${social.email}`;
-  }
-  return social.url ?? "#";
-} */
 
 ---
 

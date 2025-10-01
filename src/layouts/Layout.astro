@@ -3,12 +3,11 @@ import { VisualEditing } from "@sanity/astro/visual-editing";
 import Head from "../sanity/lib/Head.astro";
 import type { LayoutProps } from '../types/sanityTypes';
 import '../styles/global.css'
-import deepClean from "../utils/deepClean";
 
 const visualEditingEnabled =
   import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
 
-  const {page, settings } = deepClean(Astro.props) as LayoutProps;
+  const {page, settings } = Astro.props as LayoutProps;
   const pageColor = page?.pageColor;
   const pageLanguage = settings?.pageLanguage; 
 

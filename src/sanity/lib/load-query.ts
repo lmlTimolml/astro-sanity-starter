@@ -19,7 +19,7 @@ export async function loadQuery<QueryResponse>({
     );
   }
 
-  const perspective = visualEditingEnabled ? 'drafts' : 'published';
+  const perspective = visualEditingEnabled ? 'previewDrafts' : 'published';
 
   const { result, resultSourceMap } = await sanityClient.fetch<QueryResponse>(
     query,

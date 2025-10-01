@@ -63,4 +63,10 @@ export const page = defineType({
       validation: Rule => Rule.required(),
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image',
+    },
+  },
 });

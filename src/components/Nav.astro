@@ -1,10 +1,9 @@
 ---
-import deepClean from '../utils/deepClean';
 import { urlForImage } from '../sanity/lib/url-for-image';
 import type { NavType } from '../types/sanityTypes';
 import Navlink from './ui/Navlink.astro';
 
-const nav = deepClean(Astro.props) as NavType;
+const nav = Astro.props as NavType;
 
 const navBg = nav?.navColor;
 const linkCol = nav?.linkColor;
