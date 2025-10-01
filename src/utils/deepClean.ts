@@ -1,4 +1,4 @@
-export function cleanClass(str?: string): string {
+/* function cleanClass(str?: string): string {
   if (!str) return '';
   return str.replace(/[\u200B-\u200D\uFEFF]/g, '').trim();
 }
@@ -17,3 +17,4 @@ export default function deepClean<T>(data: T): T {
   }
   return data;
 }
+ */

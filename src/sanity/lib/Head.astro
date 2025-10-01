@@ -1,9 +1,8 @@
 ---
-/* import type { LayoutProps } from '../../types/sanityTypes'; */
-import deepClean from '../../utils/deepClean';
+import type { LayoutProps } from '../../types/sanityTypes';
 
 
-const {page, settings} = deepClean(Astro.props/*  as LayoutProps */);
+const {page, settings} = Astro.props as LayoutProps ;
 
 // Fallbacks
 const metaTitle = page?.pageMeta?.title || settings?.defaultTitle || page?.title || "Creative Mill";

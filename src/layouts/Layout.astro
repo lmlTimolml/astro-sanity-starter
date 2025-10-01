@@ -5,7 +5,7 @@ import type { LayoutProps } from '../types/sanityTypes';
 import '../styles/global.css'
 
 const visualEditingEnabled =
-  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
+  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED;
 
   const {page, settings } = Astro.props as LayoutProps;
   const pageColor = page?.pageColor;
