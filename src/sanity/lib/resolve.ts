@@ -20,7 +20,7 @@ export const resolve: PresentationPluginOptions['resolve'] = {
       }),
     }),
 
-    // Pages/*
+    // Pages
     page: defineLocations({
       select: {
         title: 'title',

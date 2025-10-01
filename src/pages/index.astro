@@ -1,6 +1,5 @@
 ---
-/* import cleanClass from '../utils/cleanClass' */
-import deepClean from '../utils/deepClean';
+import cleanClass from '../utils/deepClean'
 import { loadQuery } from '../sanity/lib/load-query';
 import { footerFragment, blocksFragment, navfragment, pageMeta, globalSeo } from '../sanity/lib/queries/fragments';
 import Layout from '../layouts/Layout.astro';
@@ -10,7 +9,7 @@ import { components } from '../sanity/lib/components';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
 
-const { data: homepage } = await deepClean(loadQuery<PageType>)({
+const { data: homepage } = await loadQuery<PageType>({
   query: `*[_type == "homepage"][0]{
     title,
     pageColor,
@@ -23,31 +22,26 @@ const { data: homepage } = await deepClean(loadQuery<PageType>)({
 });
 
 const blocks = homepage?.blocks ?? [];
-const pageColor = homepage?.pageColor;
 const footer = homepage?.footer;
 const nav = homepage?.navigation;
-/* const customClass = [cleanClass(pageColor)].join(' '); */
-
-export const prerender = false;
-
 const page = homepage;
 const settings = page.globalSeo;
 
-console.log('INDEX: ',blocks);
+export const prerender = false;
 
 ---
 
 <Layout page={page} settings={settings}>
   { nav ? (<Nav {...nav} />) : null }
-  <main class={`grid-component-wrapper mt-28 ${pageColor}`}>
+  <main class={`grid-component-wrapper mt-28`}>
 
-  {blocks?.map((mod, index) => {
-  const Component = components[mod._type];
+  {blocks?.map((block, index) => {
+  const Component = components[block._type];
   if (!Component) {
-    console.warn(`⚠️ No homepage component found for block type: ${mod._type}`);
+    console.warn(`⚠️ No homepage component found for block type: ${block._type}`);
     return null;
   }
-  return <Component {...mod} key={index} />;
+  return <Component {...block} key={index} />;
 })}
 
 </main>

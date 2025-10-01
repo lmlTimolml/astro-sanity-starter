@@ -13,6 +13,19 @@ export const globalSeo = defineType({
       title: 'Default Title',
     }),
     defineField({
+      name: 'pageLanguage',
+      type: 'string',
+      title: 'Page Language',
+      initialValue: 'no',
+      options: {
+        list: [
+          { title: 'English', value: 'en' },
+          { title: 'Norwegian', value: 'no' },
+        ],
+        layout: 'radio',
+      },
+    }),
+    defineField({
       name: 'defaultKeywords',
       type: 'text',
       title: 'Meta Keywords',

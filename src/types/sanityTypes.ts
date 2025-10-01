@@ -160,6 +160,7 @@ export interface MetaType {
 }
 
 export interface GlobalSeoType {
+  pageLanguage: string;
   defaultTitle?: string;
   defaultKeywords?: string;
   defaultDescription?: string;

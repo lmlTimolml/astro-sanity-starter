@@ -1,21 +1,23 @@
 ---
 import { VisualEditing } from "@sanity/astro/visual-editing";
 import Head from "../sanity/lib/Head.astro";
-import '../styles/global.css'
 import type { LayoutProps } from '../types/sanityTypes';
 import '../styles/global.css'
+import deepClean from "../utils/deepClean";
 
 const visualEditingEnabled =
-  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED;
+  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
 
-  const {page, settings } = Astro.props as LayoutProps;
+  const {page, settings } = deepClean(Astro.props) as LayoutProps;
+  const pageColor = page?.pageColor;
+  const pageLanguage = settings?.pageLanguage; 
 
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={pageLanguage} class="scroll-smooth">
 	<Head page={page} settings={settings} />
-	<body>
+	<body class={pageColor}>
 		<slot />
 		<VisualEditing enabled={visualEditingEnabled} />
 	</body>

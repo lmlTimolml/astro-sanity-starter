@@ -3,6 +3,7 @@
 export const globalSeo = `
   "globalSeo": *[_type == "globalSeo"][0]{
     defaultTitle,
+    pageLanguage,
     defaultKeywords,
     defaultDescription,
     ogImage { asset->{ url } }
